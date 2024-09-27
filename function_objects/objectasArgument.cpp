@@ -1,38 +1,37 @@
 #include<iostream>
-using namespace std ; 
+using namespace std ;
 
-class Time {
-        private : 
-                int hrs , min , sec ; 
-        
+class Time{
+        int day , hour , min , sec  ; 
         public : 
-                Time(){
-                        hrs = 0 ; min = 0 ; sec = 0 ;
-                }
-                Time( int h , int m , int s){
-                        hrs = h ; min = m ; sec = s ;
-                }
+                Time(){}
+                Time(int a ,int b , int c, int d ) : day(a) , hour(b)  , min(c) , sec(d){
 
-                Time addTime( Time a , Time b){
-                                Time temp  ; 
-                                temp.sec = a.sec+b.sec ; 
-                                temp.min = a.min+b.min  + temp.sec/60 ; 
-                                temp.sec=temp.sec%60 ;
-                                temp.hrs = a.hrs+b.hrs  + temp.min/60 ;
-                                temp.min = temp.min%60 ;
-                                return temp ; 
+                }
+        
+                Time addTime(Time &t1 , Time &t2){
+                        Time temp ; 
+                        temp.sec = t1.sec + t2.sec ; 
+                        temp.min = t1.min + t2.min + temp.sec/60 ; 
+                        temp.sec = temp.sec % 60 ; 
+                        temp.hour = t2.hour + t2.hour + temp.min/60 ; 
+                        temp.min = temp.min %60 ;
+                        temp.day = t2.day + t1.day  + temp.hour /24 ; 
+                        temp.hour = temp.hour % 24 ; 
+                        return temp ; 
                 }
 
                 void Display(){
-                        cout << "Time : " << hrs << " : " << min << " : " << sec << endl ;
+                        cout << day << " " << hour << " " << min << " " << sec << endl;
                 }
+
 };
 
 int main(){
-        Time t3 ; 
-        Time t2 ( 10 , 20 , 30 ) ;
-        Time t1 ( 10 , 50 , 40) ; 
-        t3 = t3.addTime(t1,t2); 
-        t3.Display();
-        return 0 ; 
+        Time a(2 , 12 , 40 , 50 ) ; 
+        Time b(1,12,50,60) ; 
+        Time c ; 
+        c =  c.addTime(a , b ) ; 
+        c.Display();
+        return 0 ;
 }

@@ -15,6 +15,7 @@ class Sample{
                 }
 
                 ~Sample(){
+                        //delete balance 
                         cout << "Destructor Called" ; 
                 }
 
