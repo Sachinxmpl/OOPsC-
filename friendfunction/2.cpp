@@ -7,7 +7,7 @@ class Test{
             public : 
                         Test(double w ) : width(w){}
 
-            //declaring a friend functions 
+            //declaring a friend functions with object as argument
             friend void displayWidth(Test &b);
 
 };
