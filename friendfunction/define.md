@@ -34,3 +34,20 @@ ALthrough it not a member of the class , it can access the class's private data 
 
 - Complex Maintenance: If too many friend functions are used, it can make the class harder to maintain because many functions now have access to its private members, leading to potential bugs or misuse.
 
+
+
+# Freind class 
+when a class is made friend of another class , all the  member functions fo that class becomes friend functions . 
+
+class B ; 
+class A {
+            friend class B ; 
+}
+
+class B {
+             ....
+}
+
+All the member functions of calss B will be friend functions of class A . Thus , any member function of class B can access the private and protected data of class A . 
+But member functions of classA cannot access the private and protected data of class B 
+
