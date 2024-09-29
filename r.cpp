@@ -1,53 +1,22 @@
 #include<iostream>
-using namespace std ;
+using namespace std;
 
-class A{
-        public : 
-                A(){
-                        cout << "A has constructor" << endl ;
-                  }
-                  ~A(){
-                        cout << " A has destructor" << endl ; 
-                  }
-                  void display(){
-                        cout << "From A " << endl ; 
-                  }
+class Test {
+    int age;
+    string name;
+
+public:
+    Test(int age, string name) : age(age), name(name) {}
+    void display(){
+        cout << "The name is " << name << " and the age is " << age << endl ; 
+    }
 };
 
-class B {
-        public : 
-                B(){
-                        cout << " B has construtor" << endl ; 
-
-                }
-                void display(){
-                        cout << "From B" << endl ; 
-                }
-                ~B(){
-                        cout << "B has destructor" << endl ; 
-                }
-};
-
-class C : public A , public B {
-        public : 
-                C(){
-                        cout << "C has construcotr" << endl ;
-                }
-                ~C(){ cout << " C has destructor" << endl ; }
-
-                void display(){
-                        A::display() ;
-                        B::display() ;
-                        cout << " From c" << endl ; 
-                }
-};
-
-
-int main(){
-        // A a ; 
-        // B b ; 
-        C c ; 
-        c.A::display() ;
-        c.display(); 
-                return 0 ;
+int main() {
+    Test *ptr ; 
+    Test s(20,"Sachin") ; 
+    ptr = &s ; 
+    s.display();
+    ptr->display();
+    return 0;
 }
