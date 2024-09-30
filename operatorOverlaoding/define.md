@@ -1,9 +1,9 @@
 ### Almost all operators in C++ can be overladed except the following operators
 
-1. :: (scope resolution operator)
-2. . (member selection)
-3. .\* (member selection trhough point to function)
-4. ?: (ternary conditional operator)
+1.) :: (scope resolution operator)
+2.) . (member selection)
+3.).* (member selection through point to function)
+4.) ?: (ternary conditional operator)
 
 ## Generic sysntax
 
