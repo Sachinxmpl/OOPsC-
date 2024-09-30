@@ -1,22 +1,36 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-class Test {
-    int age;
-    string name;
+int main()
+{
+	int a = 1;
+	float b = 2.3;
+	char c = 'a';
 
-public:
-    Test(int age, string name) : age(age), name(name) {}
-    void display(){
-        cout << "The name is " << name << " and the age is " << age << endl ; 
-    }
-};
+	try
+	{
 
-int main() {
-    Test *ptr ; 
-    Test s(20,"Sachin") ; 
-    ptr = &s ; 
-    s.display();
-    ptr->display();
-    return 0;
+		if (a == 22)
+		{
+			throw(a);
+		}
+		if (b == 4.3)
+		{
+			throw(b);
+		}
+
+		if(c == 'a'){
+			throw (c) ; 
+		}
+	}
+	catch(int x ){
+		cout << "The value of a is " << x << endl;
+	}
+	catch(float y){
+		cout << "The float point is " << y << endl ; 
+	}
+	catch(...){
+		cout << "Undefined exception" << endl ; 
+	}
+	return 0;
 }
